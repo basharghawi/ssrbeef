@@ -1,0 +1,137 @@
+.check-website {
+  padding: 120px 0;
+  background-color: rgb(31, 90, 188);
+
+  & .check-website__sec-title {
+    text-transform: uppercase;
+    color: #fff;
+    & span {
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 4.5px;
+    }
+    & h2 {
+      font-size: 50px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+  }
+
+  & .check-website__form-wrap {
+    position: relative;
+    width: 100%;
+  }
+  & form {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: '';
+      height: 94px;
+      width: 256px;
+      position: absolute;
+      bottom: -125px;
+      left: 23%;
+      background: url('/images/form-arrow1.png') top left no-repeat;
+      background-size: contain;
+      margin: 0 0 0 -28px;
+    }
+    & fieldset {
+      max-width: 370px;
+      overflow: hidden;
+      border-radius: 10px;
+      width: 100%;
+      position: relative;
+
+      & input {
+        padding-right: 64px;
+        padding-left: 56px;
+        height: 63.2px;
+        width: 100%;
+        [dir=rtl] & {
+          padding-left: 64px;
+          padding-right: 56px;
+        }
+      }
+      & span {
+        position: absolute;
+        left: 0;
+        width: 47px;
+        text-align: center;
+        color: rgb(20, 43, 95);
+        line-height: 63.2px;
+        transition: all .4s;
+      }
+      & i {
+        position: absolute;
+        right: 18px;
+        top: 18px;
+        width: 32px;
+        height: 27px;
+      }
+
+      & input:focus {
+        border: none;
+        outline: none;
+        & + span {
+          background-color: rgb(255, 187, 0);
+          color: #fff;
+        }
+      }
+    }
+
+    & .form-wrap__form-btn {
+      margin-left: 40px;
+      position: relative;
+      [dir=rtl] & {
+        margin-left: 0;
+        margin-right: 40px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -22px;
+        height: 15px;
+        border-left: 6px double #fff;
+        margin-top: -7.5px;
+        [dir=rtl] & {
+          left: unset;
+          border-left: unset;
+          right: -22px;
+          border-right: 6px double #fff;
+        }
+      }
+      & button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 13.5px 36px;
+        border: 3px solid rgb(255, 226, 122);
+        border-radius: 10px;
+        background-color: rgb(255, 226, 122);
+        text-transform: uppercase;
+        font-weight: bold;
+        color: rgb(157, 95, 54);
+        transition: all .4s;
+
+        &:hover {
+          background-color: transparent;
+          color: rgb(255, 226, 122);
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        background: url('/images/form-arrow2.png') top left no-repeat;
+        height: 257px;
+        width: 221px;
+        background-size: contain;
+        top: -30px;
+        right: -246px;
+      }
+    }
+  }
+}
