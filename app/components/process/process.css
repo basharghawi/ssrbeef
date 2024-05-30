@@ -1,0 +1,221 @@
+.our-process {
+  padding: 100px 0;
+}
+
+.our-process__sec-title {
+  text-align: center;
+  margin-bottom: 76px;
+  & h2 {
+    font-size: 60px;
+    font-weight: bold;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+    color: rgb(31, 90, 188);
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 2px;
+      background-color: rgb(255, 226, 122);
+      width: 70px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-left: -35px;
+    }
+
+    & span {
+      font-size: 18px;
+      letter-spacing: 4.5px;
+      margin-right: 12px;
+    }
+  }
+
+  & p {
+    margin-top: 15px;
+    color: rgb(20, 43, 95);
+  }
+}
+
+.our-process__roadmap-wrap {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: center;
+  padding-top: 165px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    top: 164px;
+    height: 2px;
+    background-color: rgb(167, 203, 235);
+  }
+
+  @media (max-width: 576px) {
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-top: 0;
+
+    &::before {
+      right: auto;
+      left: 0;
+      top: 0;
+      height: auto;
+      width: 2px;
+      bottom: 0;
+    }
+  }
+
+  & .roadmap-wrap__roadmap-item {
+    padding: 0 15px;
+    flex: 0 0 25%;
+    max-width: 25%;
+    position: relative;
+
+    @media (max-width: 576px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 165px 15px 0;
+    }
+
+    &.blue {
+      & .roadmap-item__roadmap-icon {
+        &::after {
+          background-color: #3c91dd;
+        }
+      }
+      & .roadmap-item__roadmap-label {
+        &::before {
+          background-image: url('/images/hex-blue.svg');
+        }
+        &::after {
+          background-color: #3c91dd;
+        }
+      }
+    }
+    &.pink {
+      & .roadmap-item__roadmap-icon {
+        &::after {
+          background-color: #e85388;
+        }
+      }
+      & .roadmap-item__roadmap-label {
+        &::before {
+          background-image: url('/images/hex-pink.svg');
+        }
+        &::after {
+          background-color: #e85388;
+        }
+      }
+    }
+    &.purple {
+      & .roadmap-item__roadmap-icon {
+        &::after {
+          background-color: #6271f0;
+        }
+      }
+      & .roadmap-item__roadmap-label {
+        &::before {
+          background-image: url('/images/hex-purp.svg');
+        }
+        &::after {
+          background-color: #6271f0;
+        }
+      }
+    }
+    &.green {
+      & .roadmap-item__roadmap-icon {
+        &::after {
+          background-color: #17c6a5;
+        }
+      }
+      & .roadmap-item__roadmap-label {
+        &::before {
+          background-image: url('/images/hex-green.svg');
+        }
+        &::after {
+          background-color: #17c6a5;
+        }
+      }
+    }
+  }
+  & .roadmap-item__roadmap-icon {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 143px;
+    width: 130px;
+    top: -165px;
+
+    @media (max-width: 576px) {
+      top: 0;
+    }
+
+    &::after {
+      content: "";
+      height: 52px;
+      width: 3px;
+      position: absolute;
+      bottom: -51px;
+      left: 50%;
+      margin-left: -1.5px;
+    }
+  }
+  & .roadmap-item__roadmap-label {
+    display: inline-block;
+    height: 62px;
+    width: 52px;
+    text-align: center;
+    position: relative;
+    margin-top: 26px;
+
+    &::before {
+      content: "";
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-45%);
+      width: inherit;
+      height: inherit;
+    }
+
+    & span {
+      color: #fff;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      line-height: 63px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    &::after {
+      content: "";
+      border-radius: 50%;
+      position: absolute;
+      height: 15px;
+      width: 15px;
+      left: 50%;
+      margin-left: -7.5px;
+      top: -33.5px;
+      z-index: 1;
+    }
+  }
+
+  & h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 12px;
+    color: rgb(20, 43, 95);
+  }
+}
