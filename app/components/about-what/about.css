@@ -1,0 +1,98 @@
+.about-sec {
+  padding: 120px 0;
+  
+  & .row {
+    align-items: center;
+  }
+
+  & .about-img {
+    max-width: 549px;
+    height: auto;
+  }
+  
+  & .about-desc {
+    max-width: 83%;
+    width: 100%;
+  
+    & h3 {
+      font-size: 60px;
+      font-weight: bold;
+      color: rgb(31, 90, 188);
+    }
+    & p {
+      margin-top: 15px;
+      color: rgb(20, 43, 95);
+    }
+  }
+  
+  & .about-desc__btns {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+  
+    & a {
+      display: inline-block;
+      vertical-align: middle;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 17px 26px 16px;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 3px solid;
+      position: relative;
+      transition: all .4s;
+      & i {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: inherit;
+        width: 45px;
+        height: 17px;
+        text-align: initial;
+        &:last-child {
+          right: 26px;
+          transition: right .4s;
+        }
+        &:first-child {
+          left: -100px;
+          transition: left .4s;
+        }
+      }
+      &.about-desc__btns-more {
+        padding-right: calc(38px + 2.625rem);
+        color: rgb(157, 95, 54);
+        background-color: rgb(255, 226, 122);
+        border-color: rgb(255, 226, 122);
+      }
+      &.about-desc__btns-contact {
+        color: rgb(41, 101, 153);
+        background-color: #fff;
+        border-color: rgb(182, 212, 239);
+      }
+  
+      &:hover {
+        & i {
+          &:last-child {
+            right: -100px;
+          }
+          &:first-child {
+            left: 26px;
+          }
+        }
+        &.about-desc__btns-more {
+          padding-right: 26px;
+          padding-left: calc(38px + 2.625rem);
+          color: rgb(119, 185, 241);
+          background-color: rgb(210, 234, 255);
+          border-color: rgb(210, 234, 255);
+        }
+        &.about-desc__btns-contact {
+          color: #fff;
+          background-color: rgb(31, 90, 188);
+          border-color: rgb(31, 90, 188);
+        }
+      }
+    }
+  }
+}
