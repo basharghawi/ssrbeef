@@ -1,5 +1,6 @@
 // import Image from "next/image";
 import Hero from "./components/Hero/hero";
+import Agency from "./components/about-agency/agency";
 import About from "./components/about-what/about";
 import CheckWebsite from "./components/check-website/check";
 import Process from "./components/process/process";
@@ -15,6 +16,7 @@ export default function Home() {
       <ServiceSec />
       <CheckWebsite />
       <Process />
+      <Agency />
     </>
   );
 }

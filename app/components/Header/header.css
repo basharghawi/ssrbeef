@@ -12,6 +12,7 @@
 .app-header.sticky {
   background-color: #fff;
   padding: 20px 0;
+  box-shadow: rgba(0, 0, 0, 0.377) 5px 0px 10px 1px;
   & nav {
     & ul {
       & a {

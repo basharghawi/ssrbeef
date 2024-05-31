@@ -3,3 +3,84 @@ img {
   height: 100%;
   object-fit: cover;
 }
+
+.container {
+  /* padding: 0; */
+  max-width: 1170px;
+}
+
+.bg-waves {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bg-waves .wave {
+  position: absolute;
+}
+
+.bg-waves .wave.wave-bottom-left {
+  top: auto;
+  bottom: -40px;
+  left: 0;
+  right: auto;
+  width: 367px;
+}
+
+.bg-waves .wave.wave-bottom-right {
+  top: auto;
+  bottom: -40px;
+  left: auto;
+  right: 0;
+  width: 326px;
+}
+
+.bg-waves .wave.wave-top-left {
+  top: -40px;
+  bottom: auto;
+  left: 0;
+  right: auto;
+  width: 421px;
+}
+
+.bg-waves .wave img.layer {
+  position: absolute;
+  animation: waves 5s infinite ease-in-out;
+  height: auto;
+}
+
+.bg-waves .wave.wave-bottom-left img.layer {
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: auto;
+}
+
+.bg-waves .wave.wave-bottom-right img.layer {
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
+}
+
+.bg-waves .wave.wave-top-left img.layer {
+  top: 0;
+  bottom: auto;
+  left: 0;
+  right: auto;
+}
+
+@keyframes waves {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
