@@ -12,6 +12,9 @@
     text-transform: uppercase;
     color: rgb(31, 90, 188);
     position: relative;
+    @media (max-width: 995px) {
+      font-size: 45px;
+    }
 
     &::after {
       content: "";

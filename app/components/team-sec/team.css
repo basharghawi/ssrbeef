@@ -13,6 +13,9 @@
     color: rgb(31, 90, 188);
     padding-bottom: 8px;
     position: relative;
+    @media (max-width: 995px) {
+      font-size: 45px;
+    }
 
     &::before {
       content: "";

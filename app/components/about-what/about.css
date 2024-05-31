@@ -13,11 +13,17 @@
   & .about-desc {
     max-width: 83%;
     width: 100%;
+    @media (max-width: 1030px) {
+      max-width: 100%;
+    }
   
     & h3 {
       font-size: 60px;
       font-weight: bold;
       color: rgb(31, 90, 188);
+      @media (max-width: 1030px) {
+        font-size: 45px;
+      }
     }
     & p {
       margin-top: 15px;
@@ -30,6 +36,9 @@
     align-items: center;
     gap: 30px;
     margin-top: 50px;
+    @media (max-width: 995px) {
+      gap: 2px;
+    }
   
     & a {
       display: inline-block;
@@ -42,6 +51,9 @@
       border: 3px solid;
       position: relative;
       transition: all .4s;
+      @media (max-width: 995px) {
+        font-size: 15px;
+      }
       & i {
         position: absolute;
         top: 50%;

@@ -12,6 +12,9 @@
     color: rgb(31, 90, 188);
     padding-bottom: 8px;
     position: relative;
+    @media (max-width: 995px) {
+      font-size: 45px;
+    }
 
     &::before {
       content: "";
@@ -93,6 +96,11 @@
     background-color: rgb(31, 90, 188);
     color: #fff;
     transition: all .4s;
+
+    @media (max-width: 995px) {
+      font-size: 15px;
+      padding: 13px 26px;
+    }
 
     &:hover {
       background-color: transparent;

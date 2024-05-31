@@ -6,12 +6,21 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    @media (max-width: 995px) {
+      &:first-child {
+        margin-bottom: 30px;
+      }
+    }
 
     & .service-sec__box-img {
       padding: 0 15px;
       flex: 0 0 50%;
       max-width: 50%;
       overflow: hidden;
+      @media (max-width: 995px) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
       & img {
         border-radius: 1.25rem;
       }
@@ -21,11 +30,18 @@
       padding: 0 15px;
       flex: 0 0 50%;
       max-width: 50%;
+      @media (max-width: 995px) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
 
       & i {
         display: block;
         width: 52px;
         height: 60px;
+        @media (max-width: 995px) {
+          margin-top: 15px;
+        }
       }
       & h4 {
         font-size: 30px;

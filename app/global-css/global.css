@@ -9,6 +9,10 @@ img {
   max-width: 1170px;
 }
 
+main {
+  overflow: hidden;
+}
+
 .bg-waves {
   position: absolute;
   left: 0;
@@ -28,6 +32,9 @@ img {
   left: 0;
   right: auto;
   width: 367px;
+  @media (max-width: 995px) {
+    left: -200px;
+  }
 }
 
 .bg-waves .wave.wave-bottom-right {
@@ -36,6 +43,9 @@ img {
   left: auto;
   right: 0;
   width: 326px;
+  @media (max-width: 995px) {
+    right: -200px;
+  }
 }
 
 .bg-waves .wave.wave-top-left {
@@ -44,6 +54,9 @@ img {
   left: 0;
   right: auto;
   width: 421px;
+  @media (max-width: 995px) {
+    left: -200px;
+  }
 }
 
 .bg-waves .wave img.layer {
