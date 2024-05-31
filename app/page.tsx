@@ -7,6 +7,7 @@ import CheckWebsite from "./components/check-website/check";
 import Process from "./components/process/process";
 import ServiceSec from "./components/service-sec/service-sec";
 import Services from "./components/services/services";
+import OurTeam from "./components/team-sec/team";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Process />
       <Agency />
       <Blogs />
+      <OurTeam />
     </>
   );
 }
