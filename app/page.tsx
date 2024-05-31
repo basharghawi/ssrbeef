@@ -2,6 +2,7 @@
 import Hero from "./components/Hero/hero";
 import Agency from "./components/about-agency/agency";
 import About from "./components/about-what/about";
+import Blogs from "./components/blogs-sec/blogs";
 import CheckWebsite from "./components/check-website/check";
 import Process from "./components/process/process";
 import ServiceSec from "./components/service-sec/service-sec";
@@ -17,6 +18,7 @@ export default function Home() {
       <CheckWebsite />
       <Process />
       <Agency />
+      <Blogs />
     </>
   );
 }

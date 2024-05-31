@@ -1,0 +1,66 @@
+"use client";
+
+// Swiper components, modules and styles
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+
+import BlogCard from "./blog-card"
+import "./blogs.css"
+import Link from "next/link";
+
+const breakPoints = {
+  1200: {
+    slidesPerView: 3,
+  },
+  768: {
+    slidesPerView: 2,
+  },
+  350: {
+    slidesPerView: 1,
+  },
+}
+
+export default function Blogs() {
+  return (
+    <section className="blogs-sec">
+      <div className="container">
+        <div className="blogs-sec__sec-title">
+          <h2>
+            <span>LATEST</span>
+            BLOG
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur
+            <br />
+            adipiscing elit, sed do eiusmod tempor
+          </p>
+        </div>
+        <div className="blogs-sec__blog-cards">
+          <Swiper
+            navigation
+            slidesPerView={3}
+            spaceBetween={40}
+            breakpoints={breakPoints}
+            speed={1000}
+            modules={[Navigation]}
+          >
+            {
+              Array.from({ length: 5 }, (v, i) =>
+                <SwiperSlide key={i}>
+                  <BlogCard />
+                </SwiperSlide>
+              )
+            }
+          </Swiper>
+        </div>
+        <div className="blogs-sec__view-all">
+          <Link href="/blog">
+            View All
+          </Link>
+        </div>
+      </div>
+    </section>
+  )
+}

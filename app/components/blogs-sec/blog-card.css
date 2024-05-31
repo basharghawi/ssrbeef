@@ -1,0 +1,111 @@
+.blog-card {
+  max-width: 370px;
+  user-select: none;
+}
+
+.blog-card article {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+
+  & .blog-card__img {
+    overflow: hidden;
+    & a {
+      display: block;
+    }
+    & a img {
+      display: block;
+    }
+  }
+
+  & .blog-card__info {
+    background-color: rgba(64,166,255,.15);
+    padding: 35px 40px 30px;
+    position: relative;
+    transition: all .4s;
+
+    & span {
+      position: absolute;
+      right: 25px;
+      top: -16px;
+      background-color: rgba(64, 166, 255, 1);
+      color: #fff;
+      padding: 6px 24px 5px;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 21px;
+      border-radius: 10px;
+      transition: all .4s;
+    }
+    & h3 {
+      font-size: 24px;
+      font-weight: bold;
+      color: rgb(20, 43, 95);
+    }
+    & p {
+      margin-top: 15px;
+      color: rgb(20, 43, 95);
+    }
+  }
+
+  & .blog-card__bottom {
+    background-color: rgba(64, 166, 255, .35);
+    width: 100%;
+    padding: 20px 100px 20px 40px;
+    border-top: 1px solid transparent;
+    overflow: hidden;
+    position: relative;
+    transition: all .4s;
+
+    & .bottom__post-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      & .post-author__img {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      & span {
+        color: rgb(20, 43, 95);
+      }
+    }
+
+    & .bottom__post-date {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top: -1px;
+      width: 75px;
+      color: rgba(26, 57, 127, .72);
+      background-color: rgba(31, 90, 188, .25);
+      padding: 10px;
+      font-size: 15px;
+      border-top: 1px solid rgba(31, 90, 188, .25);
+      text-align: center;
+      transition: all .4s;
+
+      & span {
+        display: block;
+        font-size: 24px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.07);
+    & .blog-card__info {
+      background-color: #fff;
+    }
+    & .blog-card__bottom {
+      background-color: #fff;
+
+      & .bottom__post-date {
+        background-color: rgb(64,166,255);
+        color: #fff;
+      }
+    }
+  }
+}
