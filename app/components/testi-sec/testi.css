@@ -1,0 +1,33 @@
+.testi-sec {
+  padding: 100px 0;
+}
+
+.testi-sec__caro {
+  padding: 0 47px;
+  position: relative;
+  @media (max-width: 576px) {
+    padding: 0;
+  }
+
+  & .swiper {
+    position: static;
+  }
+
+  & .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  & .swiper-button-prev {
+    left: -30px;
+  }
+
+  @media (max-width: 998px) {
+    margin-bottom: 35px;
+    & .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+  }
+}

@@ -9,6 +9,7 @@ import Process from "./components/process/process";
 import ServiceSec from "./components/service-sec/service-sec";
 import Services from "./components/services/services";
 import OurTeam from "./components/team-sec/team";
+import Testi from "./components/testi-sec/testi";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <Blogs />
       <OurTeam />
       <Facts />
+      <Testi />
     </>
   );
 }
