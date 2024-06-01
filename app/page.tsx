@@ -5,6 +5,7 @@ import About from "./components/about-what/about";
 import Blogs from "./components/blogs-sec/blogs";
 import CheckWebsite from "./components/check-website/check";
 import Facts from "./components/facts/facts";
+import Prices from "./components/prices-sec/prices";
 import Process from "./components/process/process";
 import ServiceSec from "./components/service-sec/service-sec";
 import Services from "./components/services/services";
@@ -25,6 +26,7 @@ export default function Home() {
       <OurTeam />
       <Facts />
       <Testi />
+      <Prices />
     </>
   );
 }

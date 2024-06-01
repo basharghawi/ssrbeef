@@ -13,6 +13,44 @@ main {
   overflow: hidden;
 }
 
+.sec-title {
+  margin-bottom: 76px;
+  text-align: center;
+
+  & h2 {
+    font-size: 60px;
+    font-weight: bold;
+    color: rgb(31, 90, 188);
+    padding-bottom: 8px;
+    position: relative;
+    @media (max-width: 995px) {
+      font-size: 45px;
+    }
+
+    &::before {
+      content: "";
+      height: 2px;
+      background-color: rgb(255, 226, 122);
+      width: 70px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-left: -35px;
+    }
+
+    & span {
+      font-size: 18px;
+      letter-spacing: 4.5px;
+      margin-right: 12px;
+    }
+  }
+
+  & p {
+    margin-top: 15px;
+    color: rgb(20, 43, 95);
+  }
+}
+
 .bg-waves {
   position: absolute;
   left: 0;
@@ -59,6 +97,17 @@ main {
   }
 }
 
+.bg-waves .wave.wave-top-right {
+  top: -40px;
+  bottom: auto;
+  left: auto;
+  right: 0;
+  width: 380px;
+  @media (max-width: 995px) {
+    right: -200px;
+  }
+}
+
 .bg-waves .wave img.layer {
   position: absolute;
   animation: waves 5s infinite ease-in-out;
@@ -84,6 +133,13 @@ main {
   bottom: auto;
   left: 0;
   right: auto;
+}
+
+.bg-waves .wave.wave-top-right img.layer {
+  top: 0;
+  bottom: auto;
+  left: auto;
+  right: 0;
 }
 
 @keyframes waves {
