@@ -3,8 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 import "./price-card.css";
+import { FunctionComponent } from "react";
 
-export default function PricesCard({cardType}) {
+interface Props {
+  cardType: string
+}
+
+export const PricesCard: FunctionComponent<Props> = ({cardType}) => {
   return (
     <div className={"prices-card " + cardType.toLowerCase()}>
       <span className="prices-card__icon">

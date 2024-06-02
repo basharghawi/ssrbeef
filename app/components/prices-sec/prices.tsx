@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import "./prices.css";
-import PricesCard from "./price-card";
+import { PricesCard } from "./price-card";
 
 export default function Prices() {
   return (
