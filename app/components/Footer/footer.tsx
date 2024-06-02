@@ -2,17 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 import "./footer.css";
+import ScrollTop from "./scroll-top";
 
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="scroll-top">
-        <div className="scroll-top-wrap">
-          <i>
-            <Image src="/images/arrow-up.png" alt="arrow top" width={30} height={30} />
-          </i>
-        </div>
-      </div>
+      <ScrollTop />
       <div className="container">
         <div className="footer-wrap">
           <div className="footer-about">
