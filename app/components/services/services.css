@@ -9,4 +9,23 @@
   margin: -115px 0 0;
   min-height: 690.2px;
   z-index: 1;
+
+  & .swiper {
+    position: static;
+
+    & .swiper-button-prev {
+      left: -30px;
+      [dir=rtl] & {
+        left: unset;
+        right: -30px;
+      }
+    }
+    & .swiper-button-next {
+      right: -30px;
+      [dir=rtl] & {
+        right: unset;
+        left: -30px;
+      }
+    }
+  }
 }

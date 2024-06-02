@@ -70,12 +70,30 @@
           left: -100px;
           transition: left .4s;
         }
+        
+        [dir=rtl] & {
+          transform: translateY(-50%) scaleX(-1);
+          &:last-child {
+            right: unset;
+            left: 26px;
+            transition: left .4s;
+          }
+          &:first-child {
+            left: unset;
+            right: -100px;
+            transition: right .4s;
+          }
+        }
       }
       &.about-desc__btns-more {
         padding-right: calc(38px + 2.625rem);
         color: rgb(157, 95, 54);
         background-color: rgb(255, 226, 122);
         border-color: rgb(255, 226, 122);
+        [dir=rtl] & {
+          padding-right: 26px;
+          padding-left: calc(38px + 2.625rem);
+        }
       }
       &.about-desc__btns-contact {
         color: rgb(41, 101, 153);
@@ -91,6 +109,15 @@
           &:first-child {
             left: 26px;
           }
+
+          [dir=rtl] & {
+            &:last-child {
+              left: -100px;
+            }
+            &:first-child {
+              right: 26px;
+            }
+          }
         }
         &.about-desc__btns-more {
           padding-right: 26px;
@@ -98,6 +125,11 @@
           color: rgb(119, 185, 241);
           background-color: rgb(210, 234, 255);
           border-color: rgb(210, 234, 255);
+          
+          [dir=rtl] & {
+            padding-left: 26px;
+            padding-right: calc(38px + 2.625rem);
+          }
         }
         &.about-desc__btns-contact {
           color: #fff;

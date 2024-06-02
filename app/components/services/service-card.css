@@ -87,6 +87,13 @@
         left: 0;
         background-color: #a4c8e8;
       }
+
+      [dir=rtl] & {
+        &::before {
+          left: unset;
+          right: 0;
+        }
+      }
     }
     & .service-card__btn {
       font-weight: bold;
@@ -103,6 +110,11 @@
       bottom: 25px;
       right: 38px;
       color: #296599;
+
+      [dir=rtl] & {
+        right: unset;
+        left: 38px;
+      }
     }
   }
 

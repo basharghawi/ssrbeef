@@ -47,6 +47,14 @@
       background-size: contain;
       margin: 0 0 0 -28px;
     }
+    [dir=rtl] & {
+      &::before {
+        left: unset;
+        right: 23%;
+        transform: scaleX(-1);
+      }
+    }
+    
     & fieldset {
       max-width: 370px;
       overflow: hidden;
@@ -72,6 +80,11 @@
         color: rgb(20, 43, 95);
         line-height: 63.2px;
         transition: all .4s;
+
+        [dir=rtl] & {
+          left: unset;
+          right: 0;
+        }
       }
       & i {
         position: absolute;
@@ -79,6 +92,11 @@
         top: 18px;
         width: 32px;
         height: 27px;
+
+        [dir=rtl] & {
+          right: unset;
+          left: 18px;
+        }
       }
 
       & input:focus {
@@ -113,7 +131,9 @@
         height: 15px;
         border-left: 6px double #fff;
         margin-top: -7.5px;
-        [dir=rtl] & {
+      }
+      [dir=rtl] & {
+        &::before {
           left: unset;
           border-left: unset;
           right: -22px;
@@ -137,6 +157,12 @@
           background-color: transparent;
           color: rgb(255, 226, 122);
         }
+
+        [dir=rtl] & {
+          & i {
+            transform: scaleX(-1);
+          }
+        }
       }
       &::after {
         content: "";
@@ -147,6 +173,14 @@
         background-size: contain;
         top: -30px;
         right: -246px;
+      }
+      
+      [dir=rtl] & {
+        &::after {
+          right: unset;
+          left: -246px;
+          transform: scaleX(-1);
+        }
       }
     }
   }

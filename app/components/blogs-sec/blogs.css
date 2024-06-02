@@ -49,9 +49,17 @@
 
   & .swiper-button-next {
     right: -25px;
+    [dir=rtl] & {
+      right: unset;
+      left: -25px;
+    }
   }
   & .swiper-button-prev {
     left: -25px;
+    [dir=rtl] & {
+      left: unset;
+      right: -25px;
+    }
   }
   & .swiper-button-next, .swiper-button-prev {
     background-color: #fff;
