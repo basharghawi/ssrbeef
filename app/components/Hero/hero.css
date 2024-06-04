@@ -4,6 +4,10 @@
   @media (max-width: 1440px) {
     height: 670px;
   }
+
+  @media (max-width: 776px) {
+    height: 424px;
+  }
   & figure {
     position: absolute;
     inset: 0;
