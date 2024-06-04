@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-// import "bootstrap/dist/css/bootstrap.min.css";
 import "./global-css/normalize.css";
 import "./global-css/bootstrap-mock.css";
 import "./global-css/global.css";
