@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./global-css/normalize.css";
-import "./global-css/bootstrap-mock.css";
-import "./global-css/global.css";
-import Header from "./components/Header/header";
-import Footer from "./components/Footer/footer";
+import { Rubik } from "next/font/google";
+import "./_global-css/normalize.css";
+import "./_global-css/bootstrap-mock.css";
+import "./_global-css/global.css";
+import Header from "./_components/Header/header";
+import Footer from "./_components/Footer/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const rubik = Rubik({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Reellance",
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" dir="ltr">
-      <body className={inter.className}>
+      <body className={rubik.className}>
         <link rel="icon" href="/favicon.png" sizes="any" />
         <Header />
         <main>

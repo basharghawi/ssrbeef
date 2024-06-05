@@ -53,8 +53,8 @@ export default function Header() {
           <div className="header-desktop">
             <figure className="logo">
               <Link href={'/'}>
-                <Image className="logo__default" src="/images/logo.png" alt="app logo" width={314} height={100} />
-                <Image className="logo__sticky" src="/images/logo2.png" alt="app logo" width={314} height={100} />
+                <Image className="logo__default" src="/images/logo-without-bg2.png" alt="app logo" width={314} height={100} />
+                <Image className="logo__sticky" src="/images/ICON-400p.png" alt="app logo" width={314} height={100} />
               </Link>
             </figure>
             <nav>

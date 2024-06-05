@@ -20,6 +20,7 @@
   & .logo {
     max-width: 175px;
     & .logo__sticky {
+      max-height: 76px;
       display: none;
     }
   }

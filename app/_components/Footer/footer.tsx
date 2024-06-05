@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="footer-about">
             <div className="footer-about__logo">
               <Link href="/">
-                <Image src="/images/footer-logo.png" alt="logo" width={100} height={100} />
+                <Image src="/images/ICON-400p.png" alt="logo" width={1080} height={1080} />
               </Link>
             </div>
             <p>We’re on a mission to build a better future where technology creates good jobs for everyone.</p>
