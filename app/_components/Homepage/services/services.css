@@ -24,12 +24,20 @@
         left: unset;
         right: -30px;
       }
+
+      @media (max-width: 776px) {
+        display: none;
+      }
     }
     & .swiper-button-next {
       right: -30px;
       [dir=rtl] & {
         right: unset;
         left: -30px;
+      }
+
+      @media (max-width: 776px) {
+        display: none;
       }
     }
   }

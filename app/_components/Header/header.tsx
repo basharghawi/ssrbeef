@@ -37,7 +37,7 @@ export default function Header() {
   }, []);
 
   const handleScroll = () => {
-    let top = 60
+    let top = 150
 
     if (window.scrollY >= top) {
       setSticky(true);

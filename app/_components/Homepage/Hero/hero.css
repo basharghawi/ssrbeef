@@ -1,7 +1,7 @@
 .hero {
   height: 970px;
   z-index: 1;
-  background-color: #034464;
+  background-color: #065573;
   @media (max-width: 1440px) {
     height: 670px;
   }
@@ -9,8 +9,27 @@
   @media (max-width: 776px) {
     height: 424px;
   }
+
   & figure {
-    position: absolute;
-    inset: 0;
+    padding-top: 150px;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 100%;
+
+    @media (max-width: 776px) {
+      padding-top: 0px;
+      padding-bottom: 60px;
+    }
+  }
+
+  & .swiper-button-next, .swiper-button-prev {
+    top: 200px;
+    color: #fff;
+    
+    @media (max-width: 776px) {
+      display: none;
+    }
   }
 }
