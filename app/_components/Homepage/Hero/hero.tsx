@@ -15,7 +15,7 @@ const autoplay = {
 
 export default function Hero() {
   return (
-    <section className="hero position-relative">
+    <section className="hero relative">
       <figure>
         <Swiper
           navigation

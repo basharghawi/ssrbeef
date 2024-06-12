@@ -280,6 +280,10 @@
   border: 0;
 }
 
-.position-relative {
+.relative {
   position: relative;
+}
+
+.text-center {
+  text-align: center;
 }

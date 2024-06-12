@@ -14,9 +14,13 @@
     padding-top: 150px;
     padding-bottom: 30px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-end;
     height: 100%;
+
+    @media (max-width: 1440px) {
+      align-items: flex-end;
+    }
 
     @media (max-width: 776px) {
       padding-top: 0px;

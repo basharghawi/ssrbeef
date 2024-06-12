@@ -1,0 +1,64 @@
+.breadcrumbs {
+  padding: 160px 0 35px;
+  color: #fff;
+}
+
+.breadcrumbs .page-info h1 {
+  font-size: 55px;
+  font-weight: bold;
+  color: #ffe27a;
+}
+
+.breadcrumbs .page-info p {
+  margin-top: 20px;
+}
+
+.breadcrumbs .page-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 75px;
+
+  & li {
+    padding: 0 20px;
+    text-transform: capitalize;
+    position: relative;
+
+    &:not(:first-child) {
+      padding-left: 30px;
+
+      [dir=rtl] & {
+        padding-left: unset;
+        padding-right: 30px;
+      }
+    }
+
+    &:not(:first-child)::before {
+      content: '';
+      background-image: url('/images/chevron-right-white.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+
+      [dir=rtl] & {
+        left: unset;
+        right: 0;
+      }
+    }
+
+    &:last-child {
+      cursor: default;
+      pointer-events: none;
+      color: #ffe27a;
+
+      &:not(:first-child)::before {
+        background-image: url('/images/chevron-right-yellow.svg');
+      }
+    }
+  }
+}
