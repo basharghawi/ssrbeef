@@ -62,3 +62,19 @@
     }
   }
 }
+
+.breadcrumbs.sub {
+  padding-bottom: 180px;
+}
+
+.breadcrumbs.sub .page-info h1 {
+  font-size: 36px;
+}
+
+.breadcrumbs.sub .page-info p {
+  display: none;
+}
+
+.breadcrumbs.sub .page-breadcrumb {
+  margin-top: 25px;
+}

@@ -5,8 +5,13 @@ import Link from "next/link";
 
 import "./breadcrumbs.css";
 import { usePathname } from "next/navigation";
+import { FunctionComponent } from "react";
 
-export default function Breadcrumbs() {
+interface Props {
+  type: "landing" | "sub"
+}
+
+export const Breadcrumbs: FunctionComponent<Props> = ({ type }) => {
   const paths = usePathname();
   const pathNames = paths.split('/').filter((path) => path);
   const pathItems = pathNames
@@ -16,30 +21,32 @@ export default function Breadcrumbs() {
     }));
 
   return (
-    <section className="breadcrumbs relative">
-      <Image src="/bgs/bg10.jpg" alt="breadcrumb bg" fill />
-      <div className="container text-center relative">
-        <div className="page-info">
-          <h1>h1 Title here</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore</p>
-        </div>
-        <ul className="page-breadcrumb">
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          {
-            pathItems.map(
-              (item) => (
-                <li key={item.name}>
-                  <Link href={"/" + item.path}>
-                    {item.name}
-                  </Link>
-                </li>
+    <section className={"breadcrumbs relative " + type}>
+      <div className="container">
+        <Image src="/bgs/bg10.jpg" alt="breadcrumb bg" fill />
+        <div className="container text-center relative">
+          <div className="page-info">
+            <h1>h1 Title here</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore</p>
+          </div>
+          <ul className="page-breadcrumb">
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            {
+              pathItems.map(
+                (item) => (
+                  <li key={item.name}>
+                    <Link href={"/" + item.path}>
+                      {item.name}
+                    </Link>
+                  </li>
+                )
               )
-            )
-          }
-        </ul>
+            }
+          </ul>
+        </div>
       </div>
     </section>
   )
