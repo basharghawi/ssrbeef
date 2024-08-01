@@ -1,26 +1,48 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 
 import "./hero-slide.css";
+import { FunctionComponent } from "react";
+import { HomeSection } from "@/app/_interfaces/HomeSection.interface";
+import { useLang } from "@/app/_contexts/LangContext";
+interface Props {
+  data: HomeSection
+}
 
-export default function HeroSlide() {
+const HeroSlide: FunctionComponent<Props> = ({ data }) => {
+  const { lang } = useLang();
+
   return (
     <div className="hero-slide">
       <div className="container">
         <div className="row">
           <div className="col-12 col-lg-6">
             <div className="hero-slide__info">
-              <h2>Having a <br /> plan</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipscing elit, sed do <br /> eiusmod tempor incididunt ut labore et dolore magna</p>
+              <h2>
+                {
+                  lang === 'ltr'? data.titleEn : data.titleAr
+                }
+              </h2>
+              <p>
+                {lang === 'ltr'? data.descriptionEn : data.descriptionAr}
+              </p>
               <div className="info-btns">
-                <Link className="info-btns__filled" href="/">Read More</Link>
-                <Link className="info-btns__bordered" href="/contact">Contact Us</Link>
+                {
+                  data.buttons.map((btn, index) => (
+                    <Link key={index} className="info-btns__filled" href="/">
+                      {
+                        lang === 'ltr'? btn.titleEn : btn.titleAr
+                      }
+                    </Link>
+                  ))
+                }
+                {/* <Link className="info-btns__bordered" href="/contact">Contact Us</Link> */}
               </div>
             </div>
           </div>
           <div className="col-12 col-lg-6">
             <div className="hero-slide__img">
-              <Image src="/images/slide1-mckp1.png" alt="slide 1" width={740} height={547} />
+              <img src={data.imageUri} alt="slide 1" />
             </div>
           </div>
         </div>
@@ -28,3 +50,5 @@ export default function HeroSlide() {
     </div>
   )
 }
+
+export default HeroSlide

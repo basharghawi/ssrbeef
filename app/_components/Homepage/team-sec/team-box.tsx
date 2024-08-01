@@ -1,8 +1,17 @@
 import Image from "next/image";
 
 import "./team-box.css"
+import { FunctionComponent } from "react";
+import { HomeSection } from "@/app/_interfaces/HomeSection.interface";
+import { useLang } from "@/app/_contexts/LangContext";
 
-export default function Teambox() {
+interface Props {
+  data: HomeSection
+}
+
+const Teambox:FunctionComponent<Props> = ({ data }) => {
+  const { lang } = useLang();
+
   return (
     <div className="team-info__team-box">
       <div className="team-box__img">
@@ -16,8 +25,16 @@ export default function Teambox() {
         </div>
       </div>
       <div className="team-box__info">
-        <h3>Matthew Hunter</h3>
-        <span>Marketing Head</span>
+        <h3>
+          {
+            lang === 'ltr'? data.titleEn : data.titleAr
+          }
+        </h3>
+        <span>
+          {
+            lang === 'ltr'? data.descriptionEn : data.descriptionAr
+          }
+        </span>
         <div className="info__scl-lnks">
           <a
             href="https://youtube.com/"
@@ -66,3 +83,5 @@ export default function Teambox() {
     </div>
   );
 }
+
+export default Teambox

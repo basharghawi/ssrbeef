@@ -5,6 +5,7 @@ import "./_global-css/bootstrap-mock.css";
 import "./_global-css/global.css";
 import Header from "./_components/Header/header";
 import Footer from "./_components/Footer/footer";
+import MainLayout from "./_layouts/MainLayout";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
@@ -19,15 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="ltr">
-      <body className={rubik.className}>
-        <link rel="icon" href="/favicon.png" sizes="any" />
-        <Header />
-        <main>
-          {children}
-        </main>
-        <Footer />
-      </body>
-    </html>
+    <MainLayout>
+      {children}
+    </MainLayout>
   );
 }

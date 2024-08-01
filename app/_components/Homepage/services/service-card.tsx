@@ -2,8 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 import "./service-card.css";
+import { HomeSection } from "@/app/_interfaces/HomeSection.interface";
+import { FunctionComponent } from "react";
+import { useLang } from "@/app/_contexts/LangContext";
 
-export default function ServiceCard() {
+interface Props {
+  data: HomeSection
+}
+
+const ServiceCard: FunctionComponent<Props> = ({ data }) => {
+  const { lang } = useLang();
+  
   return (
     <div className="service-card-wrap">
       <figure className="service-card">
@@ -12,17 +21,26 @@ export default function ServiceCard() {
           <Image className="service-card__icon-main-icon" src="/images/service-icon.svg" alt="service icon" width={120} height={120} />
         </div>
         <div className="service-card__info">
-          <h3>Digital Marketing</h3>
+          <h3>
+            {
+              lang === 'ltr'? data.titleEn : data.titleAr
+            }
+          </h3>
           <p>
-            Start working with an company that provide everything you need to any create awareness drive
+            {
+              lang === 'ltr'? data.descriptionEn : data.descriptionAr
+            }
           </p>
           <Link href="/services" className="service-card__btn">
-            Read more
+            {
+              lang === 'ltr'? data.buttons[0].titleEn : data.buttons[0].titleAr
+            }
           </Link>
           <span>01</span>
         </div>
       </figure>
-    
     </div>
   )
 }
+
+export default ServiceCard

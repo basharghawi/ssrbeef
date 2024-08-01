@@ -5,6 +5,7 @@ import Link from "next/link";
 import "./header.css";
 import Image from "next/image";
 import MobileHeader from "./mobile-header";
+import { useLang } from "@/app/_contexts/LangContext";
 
 const navData = [
   {
@@ -27,6 +28,7 @@ const navData = [
 
 export default function Header() {
   const [isSticky, setSticky] = useState(false);
+  const { lang, toggleLang } = useLang();
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -71,6 +73,11 @@ export default function Header() {
                 <span className="search-btn">
                   <svg viewBox="0 0 24 24" fill="none"><g> <path d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" stroke="#fff" strokeWidth="2.4"></path> </g></svg>
                 </span>
+                <button className="lang-btn" onClick={toggleLang}>
+                  {
+                    lang === 'ltr'? 'العربية' : 'EN'
+                  }
+                </button>
                 {/* <div className="mini-cart">
                   <a href="javascript:void(0);">
                     <div className="mini-cart__img">

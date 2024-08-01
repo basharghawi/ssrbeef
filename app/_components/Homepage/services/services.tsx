@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { FunctionComponent } from "react";
 
 // Swiper components, modules and styles
 import { Autoplay, Navigation } from "swiper/modules";
@@ -10,6 +11,7 @@ import "swiper/css/navigation";
 
 import ServiceCard from "./service-card";
 import "./services.css";
+import { HomeSection } from "@/app/_interfaces/HomeSection.interface";
 
 const breakPoints = {
   1200: {
@@ -23,7 +25,11 @@ const breakPoints = {
   },
 }
 
-export default function Services() {
+interface Props {
+  data: HomeSection[]
+}
+
+const Services: FunctionComponent<Props> = ({ data }) => {
   return (
     <section className="services">
       <div className="services-wrap">
@@ -48,21 +54,13 @@ export default function Services() {
               speed={1500}
               modules={[Autoplay, Navigation]}
             >
-              <SwiperSlide>
-                <ServiceCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ServiceCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ServiceCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ServiceCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ServiceCard />
-              </SwiperSlide>
+              {
+                data.map((item, index) => (
+                  <SwiperSlide key={index}>
+                    <ServiceCard data={item} />
+                  </SwiperSlide>    
+                ))
+              }
             </Swiper>
           </div>
         </div>
@@ -70,3 +68,5 @@ export default function Services() {
     </section>
   )
 }
+
+export default Services

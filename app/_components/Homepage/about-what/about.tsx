@@ -2,8 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 import "./about.css"
+import { HomeSection } from "@/app/_interfaces/HomeSection.interface";
+import { FunctionComponent } from "react";
 
-export default function About() {
+
+interface Props {
+  data: HomeSection[]
+}
+
+const About: FunctionComponent<Props> = ({ data }) => {
   return (
     <section className="about-sec">
       <div className="container">
@@ -38,3 +45,5 @@ export default function About() {
     </section>
   )
 }
+
+export default About

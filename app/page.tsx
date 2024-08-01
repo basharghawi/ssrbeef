@@ -12,20 +12,37 @@ import Services from "./_components/Homepage/services/services";
 import OurTeam from "./_components/Homepage/team-sec/team";
 import Testi from "./_components/Homepage/testi-sec/testi";
 
-export default function Home() {
+async function getHome() {
+  const response = await fetch('https://localhost:44388/api/Home/Get', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({})
+  });
+  const data = await response.json();
+  return data.payload
+}
+
+
+export default async function Home() {
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'; // for dev only
+  const sections = await getHome();
+  // console.log(getHomepage)
+
   return (
     <>
-      <Hero />
-      <Services />
-      <About />
+      <Hero data={sections.carousel} />
+      <Services data={sections.services} />
+      <About data={sections.whatWeDo} />
       <ServiceSec />
-      <CheckWebsite />
+      {/* <CheckWebsite /> change to subscribe */}
       <Process />
-      <Agency />
-      <Blogs />
-      <OurTeam />
-      <Facts />
-      <Testi />
+      {/* <Agency /> */}
+      <Blogs data={sections.blogs} />
+      <OurTeam data={sections.ourTeam} />
+      <Facts data={sections.statistics} />
+      <Testi data={sections.testimonialItems} />
       <Prices />
     </>
   );

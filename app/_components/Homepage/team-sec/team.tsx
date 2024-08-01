@@ -1,7 +1,15 @@
+"use client"
+
+import { HomeSection } from "@/app/_interfaces/HomeSection.interface";
 import Teambox from "./team-box";
 import "./team.css";
+import { FunctionComponent } from "react";
 
-export default function OurTeam() {
+interface Props {
+  data: HomeSection[]
+}
+
+const OurTeam: FunctionComponent<Props> = ({ data }) => {
   return (
     <section className="team-sec">
       <div className="container">
@@ -19,10 +27,10 @@ export default function OurTeam() {
         <div className="team-sec__team-info">
           <div className="row">
             {
-              Array.from({ length: 4 }, (v, i) => {
+              data.map((item, i) => {
                 return (
                   <div className="col-md-3 col-sm-6 col-lg-3" key={i}>
-                    <Teambox />
+                    <Teambox data={item} />
                   </div>
                 )
               })
@@ -33,3 +41,5 @@ export default function OurTeam() {
     </section>
   )
 }
+
+export default OurTeam

@@ -1,8 +1,14 @@
 
 
+import { FunctionComponent } from "react";
 import "./facts.css";
+import { HomeSection } from "@/app/_interfaces/HomeSection.interface";
 
-export default function Facts() {
+interface Props {
+  data: HomeSection[]
+}
+
+const Facts: FunctionComponent<Props> = ({ data }) => {
   return (
     <section className="facts">
       <div className="container">
@@ -76,3 +82,5 @@ export default function Facts() {
     </section>
   )
 }
+
+export default Facts

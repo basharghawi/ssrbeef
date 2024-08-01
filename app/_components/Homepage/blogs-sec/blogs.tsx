@@ -9,6 +9,9 @@ import "swiper/css/navigation";
 import BlogCard from "./blog-card"
 import "./blogs.css"
 import Link from "next/link";
+import { HomeSection } from "@/app/_interfaces/HomeSection.interface";
+import { FunctionComponent } from "react";
+import { BlogPost } from "@/app/_interfaces/blogs.interface";
 
 const breakPoints = {
   1200: {
@@ -22,7 +25,11 @@ const breakPoints = {
   },
 }
 
-export default function Blogs() {
+interface Props {
+  data: BlogPost[]
+}
+
+const Blogs:FunctionComponent<Props> = ({ data }) => {
   return (
     <section className="blogs-sec">
       <div className="container">
@@ -47,9 +54,9 @@ export default function Blogs() {
             modules={[Navigation]}
           >
             {
-              Array.from({ length: 5 }, (v, i) =>
-                <SwiperSlide key={i}>
-                  <BlogCard />
+              data.map((blog) =>
+                <SwiperSlide key={blog.id}>
+                  <BlogCard data={blog} />
                 </SwiperSlide>
               )
             }
@@ -64,3 +71,5 @@ export default function Blogs() {
     </section>
   )
 }
+
+export default Blogs

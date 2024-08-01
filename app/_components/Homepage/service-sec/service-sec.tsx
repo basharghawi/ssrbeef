@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import "./service-sec.css";
 
-export default function ServiceSec() {
+const ServiceSec = () => {
   return (
     <section className="service-sec">
       <div className="row align-items-center">
@@ -40,3 +40,5 @@ export default function ServiceSec() {
     </section>
   )
 }
+
+export default ServiceSec

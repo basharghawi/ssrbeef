@@ -10,8 +10,14 @@ import "swiper/css/navigation";
 
 import "./testi.css"
 import TestiBox from "./testi-box";
+import { FunctionComponent } from "react";
+import { Testimonial } from "@/app/_interfaces/testi.interface";
 
-export default function Testi() {
+interface Props {
+  data: Testimonial[]
+}
+
+const Testi: FunctionComponent<Props> = ({ data }) => {
   return (
     <section className="testi-sec">
       <div className="testi-wrap">
@@ -26,10 +32,10 @@ export default function Testi() {
                     modules={[Navigation]}
                   >
                     {
-                      Array.from({ length: 4 }, (v, i) => {
+                      data.map((item, i) => {
                         return (
                           <SwiperSlide key={i}>
-                            <TestiBox />
+                            <TestiBox data={item} />
                           </SwiperSlide>
                         )
                       })
@@ -49,3 +55,5 @@ export default function Testi() {
     </section>
   )
 }
+
+export default Testi
