@@ -24,18 +24,13 @@
   margin-top: 75px;
 
   & li {
-    padding: 0 20px;
+    padding: 0 20px 0 30px;
     text-transform: capitalize;
     position: relative;
 
-    &:not(:first-child) {
-      padding-left: 30px;
-
-      [dir=rtl] & {
-        padding-left: unset;
-        padding-right: 30px;
-      }
-    }
+    [dir=rtl] & {
+      padding: 0 30px 0 20px;
+    } 
 
     &:not(:first-child)::before {
       content: '';

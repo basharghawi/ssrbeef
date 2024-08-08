@@ -4,8 +4,23 @@ import Link from "next/link";
 import { BlogItem } from "../_components/blog-item/blog-item";
 import { Breadcrumbs } from "../_components/breadcrumbs/breadcrumbs";
 import "./blogs.css";
+import { BlogPost } from "../_interfaces/blogs.interface";
 
-export default function Page() {
+async function getBlogs() {
+  const response = await fetch('https://localhost:44388/api/Blogs/GetBlogs', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({})
+  });
+  const data = await response.json();
+  return data.payload as BlogPost[]
+}
+
+export default async function Page() {
+  const blogs = await getBlogs();
+
   return (
     <>
       <Breadcrumbs type="landing" title="Blogs"
@@ -16,9 +31,12 @@ export default function Page() {
           <div className="row">
             <div className="col-md-12 col-sm-12 col-lg-9">
               {
-                Array.from({ length: 5 }, (v, i) =>
-                  <BlogItem key={i} />
-                )
+                // Array.from({ length: 5 }, (v, i) =>
+                //   <BlogItem key={i} />
+                // )
+                blogs.map(blog => (
+                  <BlogItem key={blog.id} data={blog} />
+                ))
               }
             </div>
             <div className="col-md-12 col-sm-12 col-lg-3">

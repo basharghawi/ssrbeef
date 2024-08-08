@@ -1,23 +1,40 @@
+/* eslint-disable @next/next/no-img-element */
+"use client"
 import Image from "next/image"
 import Link from "next/link"
 
 import "./blog-item.css";
+import { FunctionComponent } from "react";
+import { BlogPost } from "@/app/_interfaces/blogs.interface";
+import { useLang } from "@/app/_contexts/LangContext";
 
-export const BlogItem = () => {
+interface Props {
+  data: BlogPost
+}
+
+export const BlogItem:FunctionComponent<Props> = ({ data }) => {
+  const { lang } = useLang();
+
   return (
     <article className="blog-item">
       <div className="blog-item__img">
-        <Link href="blogs/1">
-          <Image src="/images/post-list-img9-1.jpg" alt="post img" width={1024} height={567} />
+        <Link href={"blogs/" + data.id}>
+          <img src={data.blogImage} alt="post img" />
         </Link>
       </div>
       <div className="blog-item__info">
         <h2>
-          <Link href="blogs/1">
-            SEO Machine
+          <Link href={"blogs/" + data.id}>
+            {
+              lang === 'ltr'? data.titleEn : data.titleAr
+            }
           </Link>
         </h2>
-        <p>From site work to custom brick and stone masonry, Gardeny can install your project with its own talented artis</p>
+        <p>
+          {
+            lang === 'ltr'? data.descriptionEn : data.descriptionAr
+          }
+        </p>
         <div className="info-bottom">
           <div className="info-bottom__content">
             <div className="content-author">
@@ -26,7 +43,7 @@ export const BlogItem = () => {
             </div>
             <div className="content-date">July 12, 2019</div>
           </div>
-          <Link href="blogs/1" className="info-bottom__read-more">
+          <Link href={"blogs/" + data.id} className="info-bottom__read-more">
             Read More
           </Link>
         </div>

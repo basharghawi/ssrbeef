@@ -160,3 +160,7 @@ main {
     transform: translateY(0);
   }
 }
+
+.swiper {
+  direction: ltr !important;
+}
