@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import "./footer.css";
 import ScrollTop from "./scroll-top";
+import SocialLinks from "../social-links/social-links";
 
 export default function Footer() {
   return (
@@ -99,50 +100,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="footer-content__scl-lnks">
-            <a
-              href="https://youtube.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i>
-                <Image
-                  src="/images/youtube-icon2.svg"
-                  alt="youtube"
-                  width={20}
-                  height={20}
-                />
-              </i>
-            </a>
-            <a
-              href="https://youtube.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i>
-                <Image
-                  src="/images/instagram-icon2.svg"
-                  alt="instagram"
-                  width={20}
-                  height={20}
-                />
-              </i>
-            </a>
-            <a
-              href="https://youtube.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i>
-                <Image
-                  src="/images/twitter-icon2.svg"
-                  alt="twitter"
-                  width={20}
-                  height={20}
-                />
-              </i>
-            </a>
-          </div>
+          <SocialLinks />
         </div>
         <div className="footer-cr">
           <p>Copyright © 2024. All Right Reserved.</p>
