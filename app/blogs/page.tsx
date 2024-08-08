@@ -8,7 +8,9 @@ import "./blogs.css";
 export default function Page() {
   return (
     <>
-      <Breadcrumbs type="landing" />
+      <Breadcrumbs type="landing" title="Blogs"
+        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
+      />
       <section className="blogs-page">
         <div className="container">
           <div className="row">
