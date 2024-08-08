@@ -48,13 +48,15 @@
       top: 50%;
       left: 0;
       transform: translateY(-50%);
-
-      [dir=rtl] & {
+    }
+    [dir=rtl] & {
+      &:not(:first-child)::before {
         left: unset;
         right: 0;
+        transform: rotate(180deg) translateY(50%);
       }
     }
-
+    
     &:last-child {
       cursor: default;
       pointer-events: none;
