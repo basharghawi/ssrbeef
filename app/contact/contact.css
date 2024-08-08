@@ -1,0 +1,115 @@
+.contact-page {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.contact-info {
+  padding: 35px 40px;
+  background-image: url('/bgs/bg12.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  border-radius: 20px;
+
+  h2 {
+    font-size: 36px;
+    font-weight: 600;
+  }
+  > p {
+    margin-top: 11px;
+  }
+
+  .conatct-info__box {
+    margin-top: 35px;
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+
+    .box-icon {
+      background-color: #d2eaff;
+      width: 50px;
+      height: 50px;
+      min-width: 50px;
+      border-radius: 15px;
+      padding: 11px;
+    }
+    .box-info h3 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+  }
+  .scl-lnks {
+    justify-content: center;
+    margin-top: 40px;
+  }
+}
+
+.conatct-form {
+  padding-left: 8%;
+  [dir=rtl] & {
+    padding-left: 0;
+    padding-right: 8%;
+  }
+
+  @media (max-width: 770px) {
+    padding-left: 0;
+    [dir=rtl] & {
+      padding-right: 0;
+    }
+  }
+
+  h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #142b5f;
+    margin-bottom: 30px;
+  }
+
+  form .row {
+    row-gap: 20px;
+  }
+
+  .form-group input, .form-group textarea {
+    background-color: rgba(64, 166, 255, .18);
+    border-radius: 15px;
+    /* height: 62px; */
+    width: 100%;
+    padding: 20px;
+    border: 2px solid transparent;
+    outline: 0;
+    transition: border-color .4s;
+
+    &:focus {
+      border-color: #1f5abc;
+    }
+  }
+
+  .form-group textarea {
+    height: 150px;
+    resize: none;
+  }
+
+  .conatct-form__btn {
+    background-color: #ffe27a;
+    border: 3px solid #ffe27a;
+    padding: 17px 26px 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #9d5f36;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: background-color .4s;
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+}
+
+.contact-page__map {
+  margin-top: 50px;
+  border-radius: 20px;
+  overflow: hidden;
+}
