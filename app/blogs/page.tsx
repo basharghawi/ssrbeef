@@ -7,7 +7,7 @@ import "./blogs.css";
 import { BlogPost } from "../_interfaces/blogs.interface";
 
 async function getBlogs() {
-  const response = await fetch('https://localhost:44388/api/Blogs/GetBlogs', {
+  const response = await fetch('https://reellanceapi.reellance.com/api/Blogs/GetBlogs', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

@@ -1,7 +1,7 @@
 import { Breadcrumbs } from "@/app/_components/breadcrumbs/breadcrumbs";
 
 async function getBlog(id: string) {
-  const response = await fetch('https://localhost:44388/api/Blogs/GetBlog', {
+  const response = await fetch('https://reellanceapi.reellance.com/api/Blogs/GetBlog', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

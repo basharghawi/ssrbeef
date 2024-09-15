@@ -13,7 +13,7 @@ import OurTeam from "./_components/Homepage/team-sec/team";
 import Testi from "./_components/Homepage/testi-sec/testi";
 
 async function getHome() {
-  const response = await fetch('https://localhost:44388/api/Home/Get', {
+  const response = await fetch('https://reellanceapi.reellance.com/api/Home/Get', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ async function getHome() {
 export default async function Home() {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'; // for dev only
   const sections = await getHome();
-  // console.log(getHomepage)
+  // console.log(sections)
 
   return (
     <>

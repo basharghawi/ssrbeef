@@ -63,7 +63,7 @@ const Blogs:FunctionComponent<Props> = ({ data }) => {
           </Swiper>
         </div>
         <div className="blogs-sec__view-all">
-          <Link href="/blog">
+          <Link href="/blogs">
             View All
           </Link>
         </div>
