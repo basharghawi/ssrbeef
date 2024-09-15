@@ -58,6 +58,7 @@
   & .logo {
     & .logo__sticky {
       display: block;
+      height: 42px;
     }
     & .logo__default {
       display: none;
