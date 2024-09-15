@@ -26,9 +26,8 @@ async function getHome() {
 
 
 export default async function Home() {
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'; // for dev only
+  // process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'; // for dev only
   const sections = await getHome();
-  // console.log(sections)
 
   return (
     <>

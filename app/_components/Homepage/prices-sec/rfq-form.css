@@ -1,0 +1,56 @@
+.rfq-form {
+  max-width: 700px;
+  margin: 0 auto;
+
+  & .row {
+    row-gap: 20px;
+  }
+
+  h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #142b5f;
+    margin-bottom: 30px;
+  }
+
+  form .row {
+    row-gap: 20px;
+  }
+
+  .form-group input, .form-group textarea, .form-group select {
+    background-color: rgba(64, 166, 255, .18);
+    border-radius: 15px;
+    /* height: 62px; */
+    width: 100%;
+    padding: 20px;
+    border: 2px solid transparent;
+    outline: 0;
+    transition: border-color .4s;
+
+    &:focus {
+      border-color: #1f5abc;
+    }
+  }
+
+  .form-group textarea {
+    height: 150px;
+    resize: none;
+  }
+
+  .rfq-form__btn {
+    width: 100%;
+    background-color: #ffe27a;
+    border: 3px solid #ffe27a;
+    padding: 17px 26px 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #9d5f36;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: background-color .4s;
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+}

@@ -1,9 +1,24 @@
 import Image from "next/image";
 
 import "./prices.css";
-import { PricesCard } from "./price-card";
+import RfqForm from "./Rfq-form";
+// import { PricesCard } from "./price-card";
 
-export default function Prices() {
+async function GetRequestRfq() {
+  const response = await fetch('https://reellanceapi.reellance.com/api/Rfq/GetRequestTypes', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept-Language': 'en'
+    },
+    body: JSON.stringify({})
+  });
+  const data = await response.json();
+  return data.payload
+}
+
+async function Prices() {
+  const rfqTypes = await GetRequestRfq()
   return (
     <section className="prices-sec">
       <div className="bg-waves">
@@ -20,11 +35,10 @@ export default function Prices() {
           <Image className="layer" src="/images/bottom-right1.png" alt="img" width={260} height={494} />
         </div>
       </div>
-      <div className="container">
+      <div className="container relative">
         <div className="sec-title">
           <h2>
-            <span>Our</span>
-            Pricing
+            Request for Quote
           </h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur
@@ -33,7 +47,7 @@ export default function Prices() {
           </p>
         </div>
         <div className="prices-sec__prices">
-          <div className="row align-items-center">
+          {/* <div className="row align-items-center">
             <div className="col-md-4 col-sm-6 col-lg-4">
               <PricesCard cardType={'Basic'} />
             </div>
@@ -43,9 +57,12 @@ export default function Prices() {
             <div className="col-md-4 col-sm-6 col-lg-4">
               <PricesCard cardType={'Pro'} />
             </div>
-          </div>
+          </div> */}
+          <RfqForm rfqTypes={rfqTypes} />
         </div>
       </div>
     </section>
   )
 }
+
+export default Prices

@@ -7,14 +7,6 @@ import Footer from "../_components/Footer/footer";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
-const MainLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
-  return (
-    <LangProvider>
-      <HtmlWrapper>{children}</HtmlWrapper>
-    </LangProvider>
-  );
-}
-
 const HtmlWrapper = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   const { lang } = useLang();
 
@@ -33,5 +25,13 @@ const HtmlWrapper = ({ children }: Readonly<{ children: React.ReactNode }>) => {
     </html>
   );
 };
+
+const MainLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
+  return (
+    <LangProvider>
+      <HtmlWrapper>{children}</HtmlWrapper>
+    </LangProvider>
+  );
+}
 
 export default MainLayout;
