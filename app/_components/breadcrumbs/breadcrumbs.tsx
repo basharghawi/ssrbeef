@@ -6,14 +6,21 @@ import Link from "next/link";
 import "./breadcrumbs.css";
 import { usePathname } from "next/navigation";
 import { FunctionComponent } from "react";
+import { useLang } from "@/app/_contexts/LangContext";
 
 interface Props {
   type: "landing" | "sub",
-  title: string,
-  desc: string
+  titleEn: string,
+  descEn: string,
+  titleAr: string,
+  descAr: string,
 }
 
-export const Breadcrumbs: FunctionComponent<Props> = ({ type, title, desc }) => {
+export const Breadcrumbs: FunctionComponent<Props> = ({ type, titleEn, descEn, titleAr, descAr }) => {
+  const { lang } = useLang();
+  const title = lang === 'ltr' ? titleEn : titleAr;
+  const desc = lang === 'ltr' ? descEn : descAr
+
   const paths = usePathname();
   const pathNames = paths.split('/').filter((path) => path);
   const pathItems = pathNames.map((path, i) => ({
