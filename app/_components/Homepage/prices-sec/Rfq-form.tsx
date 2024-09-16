@@ -1,10 +1,12 @@
 "use client"
 import { FunctionComponent, useState } from 'react';
 import "./rfq-form.css";
+import { useLang } from '@/app/_contexts/LangContext';
 
 interface RfqType {
   id: number;
-  name: string;
+  nameEn: string;
+  nameAr: string;
 }
 
 interface Props {
@@ -12,6 +14,7 @@ interface Props {
 }
 
 const RfqForm: FunctionComponent<Props> = ({rfqTypes}) => {
+  const { lang } = useLang();
   const [formData, setFormData] = useState({
     name: '',
     mobile: '',
@@ -112,7 +115,11 @@ const RfqForm: FunctionComponent<Props> = ({rfqTypes}) => {
               <option value="default" disabled>Request Type</option>
               {
                 rfqTypes.map(type => (
-                  <option key={type.id} value={type.id}>{type.name}</option>
+                  <option key={type.id} value={type.id}>
+                    {
+                      lang === 'ltr' ? type.nameEn : type.nameAr
+                    }
+                  </option>
                 ))
               }
             </select>

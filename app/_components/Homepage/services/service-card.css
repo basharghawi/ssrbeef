@@ -67,6 +67,11 @@
   & .service-card__info {
     padding: 30px 60px 60px;
     position: relative;
+
+    [dir=rtl] & {
+      direction: rtl;
+    }
+    
     & h3 {
       font-size: 24px;
       font-weight: bold;

@@ -1,6 +1,12 @@
 .hero-slide {
   width: 100%;
   user-select: none;
+
+  .row {
+    [dir=rtl] & {
+      flex-direction: row-reverse;
+    }
+  }
 }
 
 .hero-slide .hero-slide__img {
@@ -14,6 +20,10 @@
 
   @media (max-width: 776px) {
     text-align: center;
+  }
+
+  [dir=rtl] & {
+    direction: rtl;
   }
 
   & h2 {

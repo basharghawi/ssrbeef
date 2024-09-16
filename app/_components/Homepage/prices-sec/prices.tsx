@@ -8,8 +8,7 @@ async function GetRequestRfq() {
   const response = await fetch('https://reellanceapi.reellance.com/api/Rfq/GetRequestTypes', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
-      'Accept-Language': 'en'
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify({})
   });
