@@ -6,8 +6,10 @@ import './contact.css';
 export default function Page() {
   return (
     <>
-      <Breadcrumbs type="landing" title="Contact" 
-        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore" 
+      <Breadcrumbs type="landing" titleEn="Contact" 
+        descEn="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore" 
+        titleAr="Contact"
+        descAr="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
       />
       <div className="contact-page container">
         <div className="row">
