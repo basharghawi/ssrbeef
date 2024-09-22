@@ -23,8 +23,10 @@ export default async function Page() {
 
   return (
     <>
-      <Breadcrumbs type="landing" title="Blogs"
-        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
+      <Breadcrumbs type="landing" titleEn="Blogs"
+        descEn="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
+        titleAr="Blogs"
+        descAr="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
       />
       <section className="blogs-page">
         <div className="container">
